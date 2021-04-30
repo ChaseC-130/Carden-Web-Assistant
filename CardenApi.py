@@ -31,12 +31,14 @@ def music_api():
 # Process Text
 @app.route('/api/v1/process', methods=['GET'])
 def receive():
-    return process_text(request)
-
-@app.after_request
-def add_headers(response):
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response_data = process_text(request)
+    headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": '*',
+        "Access-Control-Allow-Methods": 'PUT, GET, POST, DELETE, OPTIONS',
+        "Access-Control-Allow-Headers": 'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
+        }
+    raise HTTPResponse(status, headers, body)
 
 
 if __name__ == '__main__':
