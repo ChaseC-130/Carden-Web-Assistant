@@ -54,7 +54,7 @@ def get_weather(location):
     
 
 def shuffle(song):
-    result = VideosSearch(song, limit = 10).result()
+    result = VideosSearch(song, limit = 100).result()
     #print(result)
     #return result
     url = "https://www.youtube.com/watch_videos?video_ids="
