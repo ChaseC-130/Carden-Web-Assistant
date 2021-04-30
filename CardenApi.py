@@ -32,7 +32,9 @@ def music_api():
 # Process Text
 @app.route('/api/v1/process', methods=['GET'])
 def receive():
-    return process_text(request)
+    response = process_text(request)
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 
 if __name__ == '__main__':
