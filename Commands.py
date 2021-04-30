@@ -41,7 +41,7 @@ def get_song(song):
     return "https://www.youtube.com/embed/" + url + "?autoplay=1"
 
 def get_weather(location): 
-    console.log(location)
+    print(location)
     g = geocoder.google(location)
     lat = g.lat
     long = g.lng
