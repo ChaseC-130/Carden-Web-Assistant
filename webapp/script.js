@@ -47,14 +47,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
       function callAPI(text) {
         var ip = location.host;
-        axios.get(ip + '/api/v1/process', {
+        axios.get('18.215.42.7:8000/api/v1/process', {
             params: {
               speech: text
             }
         })
         .then(response => {
           const words = response.data;
-          console.log(words);
           // takes an action I.E. Play video if there is an action
           if (words['action'] !== 'Y') {
             iframe.style.display = 'block';
