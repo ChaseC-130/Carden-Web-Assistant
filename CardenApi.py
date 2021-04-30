@@ -1,11 +1,9 @@
 import flask 
 from Commands import *
 from flask import request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = flask.Flask(__name__)
-CORS(app)
-app.config["DEBUG"] = True
 
 
 
@@ -32,6 +30,7 @@ def music_api():
 
 # Process Text
 @app.route('/api/v1/process', methods=['GET'])
+@cross_origin(origin='*')
 def receive():
     return process_text(request)
 
