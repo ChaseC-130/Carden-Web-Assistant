@@ -46,7 +46,8 @@ window.addEventListener("DOMContentLoaded", () => {
       };
 
       function callAPI(text) {
-        axios.get('https://chasecargill.com/api/v1/process', {
+        var ip = location.host;
+        axios.get(ip + '/api/v1/process', {
             params: {
               speech: text
             }
