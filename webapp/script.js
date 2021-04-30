@@ -46,7 +46,6 @@ window.addEventListener("DOMContentLoaded", () => {
       };
 
       function callAPI(text) {
-        var ip = location.host;
         axios.get('18.215.42.7:8000/api/v1/process', {
             params: {
               speech: text
