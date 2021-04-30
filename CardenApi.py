@@ -4,8 +4,8 @@ from flask import request, jsonify
 from flask_cors import CORS, cross_origin
 
 app = flask.Flask(__name__)
-#app.config['CORS_HEADERS'] = 'Content-Type'
-#CORS(app, resources={r"/*": {"origins": "*"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Route that returns weather for passed IP address
 @app.route('/api/v1/weather', methods=['GET'])
