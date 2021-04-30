@@ -63,6 +63,7 @@ def shuffle(song):
     try:
         while(count < 10):
             url += result['result'][nums[count]]['id'] + ','
+            count += 1
     except IndexError:
         return "Error"
     return requests.get(url).url.replace("watch", "embed")
