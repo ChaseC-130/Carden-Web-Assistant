@@ -4,7 +4,8 @@ from flask import request, jsonify
 from flask_cors import CORS, cross_origin
 
 app = flask.Flask(__name__)
-
+CORS(app, support_credentials=True)
+@cross_origin(supports_credentials=True)
 
 
 # Route that returns weather for passed IP address
@@ -31,13 +32,7 @@ def music_api():
 # Process Text
 @app.route('/api/v1/process', methods=['GET'])
 def receive():
-    response = process_text(request)
-    response.headers.add('Content-Type', 'application/json')
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Expose-Headers', 'Content-Type,Content-Length,Authorization,X-Pagination')
-    return response
+    return process_text(request)
 
 
 if __name__ == '__main__':
