@@ -19,7 +19,12 @@ def process_text(request):
             response['response'] = get_weather(text.split('weather in', 1)[1])
         except KeyError:
             response['response'] = 'I was unable to find the weather.'
-        
+
+    if 'shuffle' in text:
+        song = text.split('shuffle', 1)[1]
+        response['reponse'] = 'I will shuffle 10 results regarding'.format(song)
+        response['action'] = shuffle(song)
+
     if 'hi' in text:
         response['response'] = "Hello."
 
@@ -47,6 +52,20 @@ def get_weather(location):
     url = requests.get(f'https://api.weather.gov/points/{lat},{long}').json()["properties"]["forecast"]
     return requests.get(url).json()["properties"]["periods"][0]["detailedForecast"]
     
+
+def shuffle(song):
+    result = VideosSearch(song, limit = 10).result()
+    #print(result)
+    #return result
+    url = "https://www.youtube.com/watch_videos?video_ids="
+    try:
+        for x in range(0, 10):
+            url += result['result'][x]['id'] + ','
+    except IndexError:
+        return "Error"
+    return requests.get(url).url.replace("watch", "embed");
+
+
 
 def get_response(text):
     if 'hi' in text:

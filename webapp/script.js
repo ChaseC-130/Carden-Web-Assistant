@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     axios.defaults.baseURL = 'https://www.chasecargill.com:8000'
     let listening = false;
 
-    commandList = ["Weather in {City, State}", "Play {Song/Video}"];
+    commandList = ["Weather in {City, State}", "Play {Song/Video}", "Shuffle {Song/Video}"];
     commandList.forEach((word) => {
         overlay.innerHTML += "<li>" + word + "</li>";
     });
