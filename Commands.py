@@ -36,7 +36,7 @@ def process_text(request):
 
 
 def get_song(song):
-    result = VideosSearch(song, limit = 1).result()
+    result = VideosSearch(song, limit = 100).result()
     #print(result)
     #return result
     try:
@@ -65,7 +65,7 @@ def shuffle(song):
             url += result['result'][nums[count]]['id'] + ','
     except IndexError:
         return "Error"
-    return requests.get(url).url.replace("watch", "embed");
+    return requests.get(url).url.replace("watch", "embed")
 
 
 
