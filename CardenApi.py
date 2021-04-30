@@ -30,31 +30,7 @@ def music_api():
 
 # Process Text
 @app.route('/api/v1/process', methods=['GET'])
-def process_text():
-    text = request.args['text'].lower()
-    response = {
-        'response': 'X',
-        'action': 'Y'  
-    }
-
-    if 'play' in text:
-        song = text.split('play', 1)[1]
-        response['response'] = 'I will now play{} on YouTube.'.format(song)
-        response['action'] = get_song(song)
-
-    if 'weather' in text:
-        try:
-            response['response'] = get_weather(request.remote_addr)
-        except KeyError:
-            response['response'] = 'I was unable to find the weather based on your IP Address.'
-        
-    if 'hi' in text:
-        response['response'] = "Hello."
-
-    if 'how are you' in text:
-        response['response'] = (" I am doing good. How are you?")
-
-    return response
-
+def receive():
+    return process_text(request)
 
 app.run()
