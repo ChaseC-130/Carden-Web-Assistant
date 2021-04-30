@@ -48,6 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       function callAPI(text) {
         axios.get('/api/v1/process', {
+          withCredentials: true,
             params: {
               speech: text
             }
