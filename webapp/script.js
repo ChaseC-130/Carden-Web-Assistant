@@ -61,12 +61,17 @@ window.addEventListener("DOMContentLoaded", () => {
           } else {
             iframe.style.display = 'none';
             iframe.src = null;
-
-            
           }
-
+          console.log(words['response']);
+          readText(words['response']);
         })
         .catch(error => console.error(error));
+      };
+
+      function readText(text) {
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        window.speechSynthesis.speak(msg);
       };
 
       recognition.continuous = false;

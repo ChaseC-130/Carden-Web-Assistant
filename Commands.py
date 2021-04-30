@@ -16,9 +16,9 @@ def process_text(request):
 
     if 'weather' in text:
         try:
-            response['response'] = get_weather(request.remote_addr)
+            response['response'] = get_weather(text)
         except KeyError:
-            response['response'] = 'I was unable to find the weather based on your IP Address.'
+            response['response'] = 'I was unable to find the weather.'
         
     if 'hi' in text:
         response['response'] = "Hello."
@@ -40,8 +40,8 @@ def get_song(song):
         return "Error"
     return "https://www.youtube.com/embed/" + url + "?autoplay=1"
 
-def get_weather(ip): 
-    g = geocoder.ip(ip)
+def get_weather(location): 
+    g = geocoder.google(location)
     lat = g.lat
     long = g.lng
     url = requests.get(f'https://api.weather.gov/points/{lat},{long}').json()["properties"]["forecast"]
