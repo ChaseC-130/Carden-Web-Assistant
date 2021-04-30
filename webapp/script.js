@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const iframe = document.getElementById("iframe");
     const result = document.getElementById("result");
     const main = document.getElementsByTagName("main")[0];
+    const carden = document.getElementById("carden");
     axios.defaults.baseURL = 'https://www.chasecargill.com:8000'
     let listening = false;
     const SpeechRecognition =
@@ -64,6 +65,7 @@ window.addEventListener("DOMContentLoaded", () => {
           }
           console.log(words['response']);
           readText(words['response']);
+          carden.innerHTML = (words['response']);
         })
         .catch(error => console.error(error));
       };

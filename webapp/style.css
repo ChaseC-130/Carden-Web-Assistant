@@ -33,14 +33,20 @@
     padding-top: 4em;
     text-align: center;
   }
-  
+  #carden {
+    font-style: italic;
+    width: 98%;
+    height: 5%;
+    font-size: 30px;
+
+  }
   #result {
-    color: #666;
+    color: gray;
     font-style: italic;
     text-align: center;
   }
   #result .final {
-    color: #0d122b;
+    color: black;
     font-style: normal;
   }
   button {
