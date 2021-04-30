@@ -30,9 +30,14 @@ def music_api():
 
 # Process Text
 @app.route('/api/v1/process', methods=['GET'])
-@cross_origin(origin='*')
 def receive():
     return process_text(request)
+
+@app.after_request
+def add_headers(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)
