@@ -41,7 +41,7 @@ def get_song(song):
     return "https://www.youtube.com/embed/" + url + "?autoplay=1"
 
 def get_weather(location):
-    g = geocoder.google(location, key="None")
+    g = geocoder.osm(location)
     lat = g.lat
     long = g.lng
     url = requests.get(f'https://api.weather.gov/points/{lat},{long}').json()["properties"]["forecast"]
