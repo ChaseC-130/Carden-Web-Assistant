@@ -1,4 +1,4 @@
-import geocoder, requests, json
+import geocoder, requests, json, random
 from youtubesearchpython import VideosSearch
 
 def process_text(request):
@@ -58,9 +58,11 @@ def shuffle(song):
     #print(result)
     #return result
     url = "https://www.youtube.com/watch_videos?video_ids="
+    count = 0
+    nums = random.sample(range(1, 100), 10)
     try:
-        for x in range(0, 10):
-            url += result['result'][x]['id'] + ','
+        while(count < 10):
+            url += result['result'][nums[count]]['id'] + ','
     except IndexError:
         return "Error"
     return requests.get(url).url.replace("watch", "embed");
