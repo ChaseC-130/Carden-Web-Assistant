@@ -2,6 +2,7 @@ import flask
 from Commands import *
 from flask import request, jsonify
 from flask_cors import CORS, cross_origin
+from OpenSSL import SSL
 
 app = flask.Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -34,5 +35,4 @@ def receive():
     return process_text(request)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
-    #, ssl_context='adhoc')
+    app.run(host='0.0.0.0', port=8000, ssl_context='adhoc')
