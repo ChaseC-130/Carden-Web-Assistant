@@ -14,9 +14,9 @@ def process_text(request):
         response['response'] = 'I will now play{} on YouTube.'.format(song)
         response['action'] = get_song(song)
 
-    if 'weather' in text:
+    if 'weather in' in text:
         try:
-            response['response'] = get_weather(text)
+            response['response'] = get_weather(text.split('weather in', 1)[1])
         except KeyError:
             response['response'] = 'I was unable to find the weather.'
         
@@ -41,6 +41,7 @@ def get_song(song):
     return "https://www.youtube.com/embed/" + url + "?autoplay=1"
 
 def get_weather(location): 
+    console.log(location)
     g = geocoder.google(location)
     lat = g.lat
     long = g.lng
