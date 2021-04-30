@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
       };
 
       function callAPI(text) {
-        axios.get(':8000/api/v1/process', {
+        axios.get('http://18.215.42.7:8000/api/v1/process', {
             params: {
               speech: text
             }
