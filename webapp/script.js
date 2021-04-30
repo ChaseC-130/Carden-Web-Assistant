@@ -3,8 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const iframe = document.getElementById("iframe");
     const result = document.getElementById("result");
     const main = document.getElementsByTagName("main")[0];
-    //axios.defaults.baseURL = 'http://18.215.42.7:8000'
-    axios.defaults.baseURL = 'localhost:8000'
+    axios.defaults.baseURL = 'http://18.215.42.7:8000'
     let listening = false;
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
