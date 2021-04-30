@@ -14,9 +14,9 @@ def process_text(request):
         response['response'] = 'I will now play{} on YouTube.'.format(song)
         response['action'] = get_song(song)
 
-    if 'weather in' in text:
+    if 'weather' in text:
         try:
-            response['response'] = get_weather(text.split('weather in', 1)[1])
+            response['response'] = get_weather(text)
         except KeyError:
             response['response'] = 'I was unable to find the weather.'
         
