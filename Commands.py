@@ -61,7 +61,7 @@ def shuffle(song):
     count = 0
     nums = random.sample(range(1, 100), 10)
     try:
-        while(count < 10):
+        while(count < 9):
             url += result['result'][nums[count]]['id'] + ','
             count += 1
     except IndexError:
