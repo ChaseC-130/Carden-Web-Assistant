@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const iframe = document.getElementById("iframe");
     const result = document.getElementById("result");
     const main = document.getElementsByTagName("main")[0];
-    axios.defaults.baseURL = 'https://www.chasecargill.com:7998'
+    axios.defaults.baseURL = 'http://www.chasecargill.com:7998'
     let listening = false;
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
