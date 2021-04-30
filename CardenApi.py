@@ -34,4 +34,4 @@ def receive():
     return process_text(request)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='chasecargill.com', port=80)
