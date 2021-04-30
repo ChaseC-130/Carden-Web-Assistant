@@ -4,8 +4,18 @@ window.addEventListener("DOMContentLoaded", () => {
     const result = document.getElementById("result");
     const main = document.getElementsByTagName("main")[0];
     const carden = document.getElementById("carden");
+    const commands = document.getElementById("commands");
+    const overlay = document.getElementById("overlay-content");
+    commandsShown = false;
     axios.defaults.baseURL = 'https://www.chasecargill.com:8000'
     let listening = false;
+
+    commandList = ["Weather in {City, State}", "Play {Song/Video}"];
+    commandList.forEach((word) => {
+        overlay.innerHTML += "<li>" + word + "</li>";
+    });
+    overlay.innerHTML += "</ol>";
+
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     if (typeof SpeechRecognition !== "undefined") {
@@ -16,14 +26,12 @@ window.addEventListener("DOMContentLoaded", () => {
         main.classList.remove("speaking");
         recognition.stop();
         button.innerHTML = "Click to speak";
-        
       };
 
       const start = () => {
         main.classList.add("speaking");
         recognition.start();
         button.innerHTML = "I'm listening...";
-       
       };
       
       const onResult = event => {
@@ -63,7 +71,6 @@ window.addEventListener("DOMContentLoaded", () => {
             iframe.style.display = 'none';
             iframe.src = null;
           }
-          console.log(words['response']);
           readText(words['response']);
           carden.innerHTML = (words['response']);
         })
@@ -75,6 +82,18 @@ window.addEventListener("DOMContentLoaded", () => {
         msg.text = text;
         window.speechSynthesis.speak(msg);
       };
+
+      commands.addEventListener("click", 
+      function toggleCommands() {
+        commandsShown = !commandsShown;
+        if (!commandsShown) {
+          commands.innerHTML = "Show Commands"
+          document.getElementById("overlay").style.width = "0%";
+        } else {
+          commands.innerHTML = "Hide Commands"
+            document.getElementById("overlay").style.width = "100%";
+        }
+      });
 
       recognition.continuous = false;
       recognition.interimResults = true;
