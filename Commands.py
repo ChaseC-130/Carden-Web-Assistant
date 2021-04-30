@@ -54,15 +54,14 @@ def get_weather(location):
     
 
 def shuffle(song):
-    result = VideosSearch(song, limit = 100).result()
+    result = VideosSearch(song, limit = 10).result()
     #print(result)
     #return result
     url = "https://www.youtube.com/watch_videos?video_ids="
     count = 0
-    nums = random.sample(range(1, 100), 10)
     try:
-        while(count < 9):
-            url += result['result'][nums[count]]['id'] + ','
+        while(count <= 9):
+            url += result['result'][count]['id'] + ','
             count += 1
     except IndexError:
         return "Error"
