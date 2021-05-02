@@ -25,8 +25,8 @@ def process_text(request):
         response['reponse'] = 'I will shuffle 10 results regarding {}'.format(song)
         response['action'] = shuffle(song)
 
-    if 'hi' in text:
-        response['response'] = "Hello."
+#    if 'hi' in text:
+ #       response['response'] = "Hello."
 
     if 'how are you' in text:
         response['response'] = "I am doing good. How are you?"
@@ -35,8 +35,8 @@ def process_text(request):
         response['response'] = "My name is Cardena"
 
     if response['response'] == 'X':
-        response['response'] = "Searching google for {}".format(text)
-        response['action'] = requests.get("https://www.google.com/search?q=" + text)
+        response['response'] = "Searching google for {}".format(text) + requests.get("https://www.google.com/search?q=" + text)
+        
 
     return response
 
