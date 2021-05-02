@@ -22,7 +22,7 @@ def process_text(request):
 
     if 'shuffle' in text:
         song = text.split('shuffle', 1)[1]
-        response['reponse'] = 'I will shuffle 10 results regarding'.format(song)
+        response['reponse'] = 'I will shuffle 10 results regarding {}'.format(song)
         response['action'] = shuffle(song)
 
     if 'hi' in text:
