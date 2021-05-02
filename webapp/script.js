@@ -69,6 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
               iframe.style.display = 'block';
               iframe.src = words['action'];
             } else {
+              console.log(words['action']);
               iframe.style.display = 'none';
               iframe.src = null;
               window.open(words['action']);
