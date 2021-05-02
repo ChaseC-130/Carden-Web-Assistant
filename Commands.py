@@ -29,7 +29,10 @@ def process_text(request):
         response['response'] = "Hello."
 
     if 'how are you' in text:
-        response['response'] = (" I am doing good. How are you?")
+        response['response'] = "I am doing good. How are you?"
+
+    if "what's your name" in text or "who are you" in text:
+        response['response'] = "My name is Cardena"
 
     return response
 
