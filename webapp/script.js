@@ -72,7 +72,9 @@ window.addEventListener("DOMContentLoaded", () => {
               console.log(words['action']);
               iframe.style.display = 'none';
               iframe.src = null;
-              window.open(words['action']);
+              if (confirm("Open search results?")) {
+                window.open(words['action']);
+              }
             }
         
           } else {
