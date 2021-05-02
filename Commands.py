@@ -36,8 +36,7 @@ def process_text(request):
 
     if response['response'] == 'X':
         response['response'] = "Searching google for {}".format(text)
-        query = requests.get("https://www.google.com/search?q=" + text)
-        response['action'] = query
+        response['action'] = requests.get("https://www.google.com/search?q=" + text).url
 
     return response
 
