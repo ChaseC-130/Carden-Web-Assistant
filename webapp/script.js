@@ -61,8 +61,12 @@ window.addEventListener("DOMContentLoaded", () => {
               speech: text
             }
         })
+
+        
         .then(response => {
           const words = response.data;
+          readText(words['response']);
+          carden.innerHTML = (words['response']);
           // takes an action I.E. Play video if there is an action
           if (words['action'] !== 'Y') {
             if (words['action'].includes("https://www.youtube.com")) {
@@ -76,13 +80,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 window.open(words['action']);
               }
             }
-        
           } else {
             iframe.style.display = 'none';
             iframe.src = null;
           }
-          readText(words['response']);
-          carden.innerHTML = (words['response']);
         })
         .catch(error => console.error(error));
       };
