@@ -35,7 +35,7 @@ def process_text(request):
         response['response'] = "My name is Cardena"
 
     if response['response'] == 'X':
-        response['response'] = "Searching google for {}".format(text)
+        response['response'] = "Searching Google for {}".format(text)
         response['action'] = requests.get("https://www.google.com/search?q=" + text).url
 
     return response

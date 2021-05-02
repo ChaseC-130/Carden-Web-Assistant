@@ -65,8 +65,15 @@ window.addEventListener("DOMContentLoaded", () => {
           const words = response.data;
           // takes an action I.E. Play video if there is an action
           if (words['action'] !== 'Y') {
-            iframe.style.display = 'block';
-            iframe.src = words['action'];
+            if (words['action'].includes("https://www.youtube.com")) {
+              iframe.style.display = 'block';
+              iframe.src = words['action'];
+            } else {
+              iframe.style.display = 'none';
+              iframe.src = null;
+              window.open(words['action']);
+            }
+        
           } else {
             iframe.style.display = 'none';
             iframe.src = null;
