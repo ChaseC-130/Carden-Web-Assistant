@@ -34,6 +34,9 @@ def process_text(request):
     if "what's your name" in text or "who are you" in text:
         response['response'] = "My name is Cardena"
 
+    if "what do you think of chelsea" in text:
+        response['response'] = "She is already, however sometimes she smells pretty bad; at least in my opinion."
+
     return response
 
 
