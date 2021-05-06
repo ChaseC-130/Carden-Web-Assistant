@@ -1,27 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-    <title>Carden, Personal Assistant</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Carden, Personal Assistant</h1>
-      <button id ="commands">Show Commands</button>
-    </header>
-    <main>
-      <div id="overlay" class="overlay">
-        <div id="overlay-content" class="overlay-content">Commands<ol></div>
-      </div>
-      <button id="button">Click to speak</button>
-      <div id="result"></div>
-      <div id="main" align="center"><p id="carden"></p><iframe id="iframe"></iframe></div>
-      <p id="message" hidden aria-hidden="true">
-        Unsupported browser.
-      </p>
-    </main>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src = script.js></script>
-  </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Chase Cargill</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Chase Cargill</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="./Resume/Chase_Cargill_resume.pdf" target="_blank">Resume</a>
+                    <a class="nav-item nav-link" href="https://www.linkedin.com/in/chase-cargill-31288b178/" target="_blank">LinkedIn</a>
+                    <a class="nav-item nav-link" href="https://github.com/ChaseC-130" target="_blank">GitHub</a>
+                    <a class="nav-item nav-link" href="Carden.html" target="_blank">Carden, Personal Assistant</a>
+                </div>
+            </div>
+    </nav>
+
+
+    <div class="p-5 text-center bg-light">
+        <h1 class="mb-3">Chase Cargill</h1>
+        <img src="./imgs/linkedIn.jpeg" id="profile">
+        <h4 class="mt-2">Information Technology Professional</h4>
+        <h5 class="mt-5">Welcome</h5>
+        <p>On this Website you may find various information and links containing information about myself. <br> At the top is a links to various information.
+        </p>
+        <h5>Carden, Personal Assistant</h5>
+        Carden is a web-based Personal Assistant. It utilizes an API written in Python via the Flask framework.<br>Carden only works in Browsers that support the"SpeechRecognition" webkit (For a list and information please reference
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition#browser_compatibility">here</a>). <br>Carden and this website are hosted on AWS and deployed using Apache Web Server. <br>This website will be dynamically updated using
+        a Jenkins pipeline <br>whenever a change is pushed to the GitHub repository.
+        </p>
+    </div>
+
+    <div class="row bg-light">
+        <div class="col text-center">
+            <div class="card">
+                <div class="card-body text">
+                    <h4 class="card-title text-dark text-center">Experience</h4>
+                    <ul class="list-group list-group-flush mt-2">
+                        <li class="list-group-item text-dark bg-light font-weight-bold">Network Engineer</li>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text text-left text-dark mt-2 ml-3">General Motors
+                                </p>
+                                <p class="card-text text-left text-dark ml-3">Discovery IT
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text text-right text-dark mt-2 mr-3">09/2020 - Current
+                                </p>
+                                <p class="card-text text-right text-dark mr-3">12/2019 - 09/2020
+                                </p>
+                            </div>
+                        </div>
+
+                        <li class="list-group-item text-dark bg-light mt-2 font-weight-bold">Field Systems Technician</li>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text text-left text-dark mt-2 ml-3">H&R Block
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text text-right text-dark mt-2 mr-3">08/2018 - 12/2019
+                                </p>
+                            </div>
+                        </div>
+                        </p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-dark">Goals</h4>
+                    <ul class="list-group list-group-flush text-center mt-2">
+                        <li class="list-group-item bg-light text-dark font-weight-bold">Short Term</li>
+                        <p class="card-text text-dark mt-1">Pursue a career in which I may gain more experience programming; ideally write code utilizing a DevOps approach.
+                        </p>
+                        <li class="list-group-item bg-light text-dark font-weight-bold mt-2">Long Term</li>
+                        <p class="card-text text-dark mt-1">Leverage strong background into a Software Architect position, requiring orchestration of complex systems design.</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-4 offset-1 text-center">
+            <h4 class="mt-5">Hobbies</h4>
+            <div id="carouselMain" class="carousel carousel-dark slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselMain" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselMain" data-slide-to="1"></li>
+                    <li data-target="#carouselMain" data-slide-to="2"></li>
+                    <li data-target="#carouselMain" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" id="img" src="./imgs/deadlift.jpeg" alt="Powerlifting">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Powerlifting</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" id="img" src="./imgs/pc.jpeg" alt="PC Gaming">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>PC Gaming</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" id="img" src="./imgs/m109r.jpeg" alt="Motorcycles">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Motorcycles</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" id="img" src="./imgs/keyboard.jpeg" alt="Piano">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Piano</h5>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselMain" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="col-sm-4 offset-2 text-center">
+            <h4 class="mt-5">Certifications</h4>
+            <div class="row">
+                <div class="col">
+                    <h6 class="mt-4"><a href="./imgs/aws_cert.pdf" target="_blank">AWS Certified Solutions Architect Associate</a></h6>
+                    <h6 class="mt-4"><a href="https://www.testdome.com/cert/ab673ebc3f674118959353c78195a13f" target="_blank">TestDome Python Certification - Top 10%</a></h6>
+                    <h6 class="mt-4">Fortinet Network Security Expert 4 - FortiGates</h6>
+                    <h6 class="mt-4">
+                        <a href="https://leetcode.com/Snip130/" target="_blank"><img src="./imgs/leetcode.svg" id="banner"></a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 offset-4 text-center">
+            <h4 class="mt-5">Contact</h4>
+            <div class="card">
+                <div class="card-body text">
+                    <ul class="list-group list-group-flush mt-2">
+                        <li class="list-group-item text-dark bg-light font-weight-bold"><a href="mailto:chase.c.cargill@gmail.com">chase.c.cargill@gmail.com</a></li>
+                        <li class="list-group-item text-dark bg-light font-weight-bold"><a href="tel:409-779-9764">(409) 779-9764</a></li>
+                        <li class="list-group-item text-dark bg-light font-weight-bold"><img src="./imgs/discord.png" id="icon"> Googolplex#7082</li>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <footer class='text-left'>
+        <span class="footer-copyright text-muted ml-2">2021 © Chase Cargill</span>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
 </html>

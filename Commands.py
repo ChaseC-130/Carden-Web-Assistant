@@ -32,7 +32,7 @@ def process_text(request):
         response['response'] = "I am doing good. How are you?"
 
     if "what's your name" in text or "who are you" in text:
-        response['response'] = "My name is Cardena"
+        response['response'] = "My name is Carden"
 
     if response['response'] == 'X':
         response['response'] = "Searching Google for {}".format(text)

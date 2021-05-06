@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Carden, Personal Assistant</title>
+    <link rel="stylesheet" href="./Carden/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Carden, Personal Assistant</h1>
+        <button id="commands">Show Commands</button>
+    </header>
+    <main>
+        <div id="overlay" class="overlay">
+            <div id="overlay-content" class="overlay-content">Commands
+                <ol>
+            </div>
+        </div>
+        <button id="button">Click to speak</button>
+        <div id="result"></div>
+        <div id="main" align="center">
+            <p id="carden"></p><iframe id="iframe"></iframe></div>
+        <p id="message" hidden aria-hidden="true">
+            Unsupported browser.
+        </p>
+    </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./Carden/script.js"></script>
+</body>
+
+</html>
