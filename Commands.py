@@ -22,7 +22,7 @@ def process_text(request):
 
     if 'shuffle' in text:
         song = text.split('shuffle', 1)[1]
-        response['reponse'] = 'I will shuffle 10 results regarding {}'.format(song)
+        response['response'] = 'I was unable to find the weather.'
         response['action'] = shuffle(song)
 
 #    if 'hi' in text:
@@ -62,8 +62,6 @@ def get_weather(location):
 
 def shuffle(song):
     result = VideosSearch(song, limit = 100).result()
-    #print(result)
-    #return result
     url = "https://www.youtube.com/watch_videos?video_ids="
     count = 0
     nums = random.sample(range(10), 10)
