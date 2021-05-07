@@ -1,15 +1,48 @@
-#profile {
-    width: 250px;
-    height: 250px;
-    border-radius: 200px;
-}
-
-#icon {
-    width: 17px;
-    height: 17px;
-}
-
-#banner {
-    width: 100px;
-    height: 50px;
-}
+    #profile {
+        width: 250px;
+        height: 250px;
+        border-radius: 200px;
+    }
+    
+    #icon {
+        width: 17px;
+        height: 17px;
+    }
+    
+    #banner {
+        width: 100px;
+        height: 50px;
+    }
+    
+    #commands {
+        border-radius: 50px;
+    }
+    
+    #button {
+        border-radius: 50px;
+        bottom: 5px;
+    }
+    
+    .overlay {
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: none;
+        position: absolute;
+        top: 42px;
+        left: 15px;
+        background-color: rgba(66, 72, 97, 0.9);
+        color: white;
+        border-radius: 20px;
+        z-index: 100;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    iframe {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
