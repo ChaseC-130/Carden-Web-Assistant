@@ -93,19 +93,19 @@ window.addEventListener("DOMContentLoaded", () => {
             msg.text = text;
             window.speechSynthesis.speak(msg);
         };
-
-        commands.addEventListener("click",
-            function toggleCommands() {
-                commandsShown = !commandsShown;
-                if (!commandsShown) {
-                    commands.innerHTML = "Show Commands"
-                    document.getElementById("overlay").style.display = "none";
-                } else {
-                    commands.innerHTML = "Hide Commands"
-                    document.getElementById("overlay").style.display = "inline";
-                }
-            });
-
+        /*
+                commands.addEventListener("click",
+                    function toggleCommands() {
+                        commandsShown = !commandsShown;
+                        if (!commandsShown) {
+                            commands.innerHTML = "Show Commands"
+                            document.getElementById("overlay").style.display = "none";
+                        } else {
+                            commands.innerHTML = "Hide Commands"
+                            document.getElementById("overlay").style.display = "inline";
+                        }
+                    });
+        */
         recognition.continuous = false;
         recognition.interimResults = true;
         recognition.addEventListener("result", onResult);
