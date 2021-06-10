@@ -1,0 +1,300 @@
+define.alias("@glimmer/component/-private/ember-component-manager","company-creation/component-managers/glimmer")
+define.alias("artdeco-button/components/artdeco-button","company-creation/components/artdeco-button")
+define.alias("artdeco-datepicker/components/artdeco-calendar-internal","company-creation/components/artdeco-calendar-internal")
+define.alias("artdeco-carousel/components/artdeco-carousel-item","company-creation/components/artdeco-carousel-item")
+define.alias("artdeco-carousel/components/artdeco-carousel-slider","company-creation/components/artdeco-carousel-slider")
+define.alias("artdeco-carousel/components/artdeco-carousel-title","company-creation/components/artdeco-carousel-title")
+define.alias("artdeco-carousel/components/artdeco-carousel","company-creation/components/artdeco-carousel")
+define.alias("artdeco-completeness-meter-linear/components/artdeco-completeness-meter-linear","company-creation/components/artdeco-completeness-meter-linear")
+define.alias("artdeco-datepicker/components/artdeco-datepicker","company-creation/components/artdeco-datepicker")
+define.alias("artdeco-datepicker/components/artdeco-daterange","company-creation/components/artdeco-daterange")
+define.alias("artdeco-hoverables/components/artdeco-hoverable-content","company-creation/components/artdeco-hoverable-content")
+define.alias("artdeco-hoverables/components/artdeco-hoverable-trigger","company-creation/components/artdeco-hoverable-trigger")
+define.alias("artdeco-inline-feedback/components/artdeco-inline-feedback","company-creation/components/artdeco-inline-feedback")
+define.alias("artdeco-loader/components/artdeco-loader","company-creation/components/artdeco-loader")
+define.alias("artdeco-pagination/components/artdeco-pagination-ellipsis","company-creation/components/artdeco-pagination-ellipsis")
+define.alias("artdeco-pagination/components/artdeco-pagination-indicator","company-creation/components/artdeco-pagination-indicator")
+define.alias("artdeco-pagination/components/artdeco-pagination","company-creation/components/artdeco-pagination")
+define.alias("artdeco-text-input/components/artdeco-text-input-multi","company-creation/components/artdeco-text-input-multi")
+define.alias("artdeco-text-input/components/artdeco-text-input-single","company-creation/components/artdeco-text-input-single")
+define.alias("artdeco-text-input/components/artdeco-text-input","company-creation/components/artdeco-text-input")
+define.alias("artdeco-toggle/components/artdeco-toggle","company-creation/components/artdeco-toggle")
+define.alias("ember-cli-artdeco-typeahead/components/artdeco-typeahead-input","company-creation/components/artdeco-typeahead-input")
+define.alias("ember-cli-artdeco-typeahead/components/artdeco-typeahead-result","company-creation/components/artdeco-typeahead-result")
+define.alias("ember-cli-artdeco-typeahead/components/artdeco-typeahead-results-list","company-creation/components/artdeco-typeahead-results-list")
+define.alias("ember-cli-artdeco-typeahead/components/artdeco-typeahead","company-creation/components/artdeco-typeahead")
+define.alias("ember-vector-images/components/custom-image","company-creation/components/custom-image")
+define.alias("ember-wormhole/components/ember-wormhole","company-creation/components/ember-wormhole")
+define.alias("ember-vector-images/components/lazy-background","company-creation/components/lazy-background")
+define.alias("ember-vector-images/components/lazy-image","company-creation/components/lazy-image")
+define.alias("artdeco-icons-web/components/linkedin-logo","company-creation/components/linkedin-logo")
+define("company-creation/components/page-create-base",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","global-utils/utils/is-browser"],(function(e,t,r,a,n,o,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var l,s,c,m,p
+let d=(l=Ember._tracked,s=Ember._action,c=Ember._action,m=class extends o.default{constructor(){var e
+super(...arguments);(0,t.default)(this,"createFormData",p,this)
+"smb"===(null===(e=this.args.type)||void 0===e?void 0:e.toLowerCase())&&this.loadCreateForm("urn:li:fs_pageCreationForm:SMB")}loadCreateForm(e){return this.args.getCreateFormData(e).then((e=>{if(!this.isDestroying){i.default&&window.scroll(0,0)
+this.createFormData=e}}))}loadCreatePortal(){i.default&&window.scroll(0,0)
+this.createFormData=null
+this.args.resetType()}},p=(0,a.default)(m.prototype,"createFormData",[l],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),(0,a.default)(m.prototype,"loadCreateForm",[s],Object.getOwnPropertyDescriptor(m.prototype,"loadCreateForm"),m.prototype),(0,a.default)(m.prototype,"loadCreatePortal",[c],Object.getOwnPropertyDescriptor(m.prototype,"loadCreatePortal"),m.prototype),m)
+e.default=d}))
+define("company-creation/components/page-create-form",["exports","@babel/runtime/helpers/esm/toConsumableArray","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/classPrivateFieldGet","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","global-utils/utils/urn-converter","urn-utils","form-builder/utils/form-element-utils","company-creation/utils/clean-company-uri","data-layer/utils/organization-admin/organization-validator","company-creation/utils/requests/page-creation-form-response","restli-utils","ember-lifeline","ember-app-scheduler"],(function(e,t,r,a,n,o,i,l,s,c,m,p,d,u,g,f,b){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var h,y,_,v,E,w,k,F,x,P,C,O,z,D,I,T,R,S,M,j,N,A,L,U,q,B,H,V,K,G,W,Y,X,Z,$,Q,J
+const ee=Object.freeze({NAME:"enteredOrgName",INDUSTRY:"enteredOrgIndustry",TAGLINE:"enteredOrgTagline",LOGO:"enteredOrgLogo"}),te=Object.freeze({SMB:"flagship3_smb_creation_form",ORGANIZATION:"flagship3_company_creation_form",BRAND:"flagship3_showcase_creation_form",SCHOOL:"flagship3_university_creation_form"}),re=Object.freeze({ASSOCIATED_COMPANY_PAGE:"form_el_associated_company_page",NAME:"form_el_name",LINKEDIN_URL:"form_el_linkedin_url",WEBSITE:"form_el_website",INDUSTRY:"form_el_industry",COMPANY_SIZE:"form_el_company_size",COMPANY_TYPE:"form_el_company_type",LOGO:"form_el_logo",TAGLINE:"form_el_tagline"}),ae=Object.freeze({10:"i18n_organization_page_already_exist",37:"i18n_organization_create_few_connections",38:"i18n_organization_create_too_recent",54:"i18n_organization_create_limit_reached"})
+let ne=(h=Ember.inject.service("tracking"),y=Ember.inject.service("i18n"),_=Ember.inject.service("store"),v=Ember.inject.service("lix"),E=Ember._tracked,w=Ember._tracked,k=Ember._tracked,F=Ember._tracked,x=Ember._tracked,P=Ember._tracked,C=Ember._tracked,O=Ember._tracked,z=Ember._tracked,D=Ember._tracked,I=Ember._tracked,T=Ember._tracked,R=Ember._action,S=Ember._action,M=Ember._action,j=(J=new WeakMap,class extends l.default{get showAllErrors(){return this.firstInvalidInputSelector.length>0}get disableSubmit(){return!this.verificationChecked||this.validatingResponse||this.isSubmitting}get isReflowEnabled(){return this.lix.getTreatmentIsEnabled("voyager.web.infraux-is-reflow-enabled")}get pageCreationFormType(){const e=Ember.get(this.args,"createFormData.pageCreationFormUrn")
+return e&&(0,s.fromUrn)(e).id}get pageKey(){return te[this.pageCreationFormType]}get shouldFocusFirstFormElement(){return!!Ember.get(this.args,"createFormData.formSections.firstObject.formElements.firstObject.urn")}constructor(){super(...arguments);(0,r.default)(this,"tracking",N,this);(0,r.default)(this,"i18n",A,this);(0,r.default)(this,"store",L,this);(0,r.default)(this,"lix",U,this);(0,r.default)(this,"verificationChecked",q,this);(0,r.default)(this,"validatingResponse",B,this);(0,r.default)(this,"isSubmitting",H,this);(0,r.default)(this,"showSubmissionError",V,this);(0,r.default)(this,"errorMessageKey",K,this);(0,r.default)(this,"currentUriValue",G,this);(0,r.default)(this,"enteredOrgLogo",W,this);(0,r.default)(this,"enteredOrgName",Y,this);(0,r.default)(this,"enteredOrgIndustry",X,this);(0,r.default)(this,"enteredOrgTagline",Z,this);(0,r.default)(this,"animationReady",$,this);(0,r.default)(this,"firstInvalidInputSelector",Q,this)
+J.set(this,{writable:!0,value:{}})
+this.validator=new d.default(this.store);(0,b.whenRouteIdle)().then((()=>{this._initializeView()}))}willDestroy(){super.willDestroy.apply(this,arguments);(0,f.runDisposables)(this)}onFormElementFocus(e){this._fireElementFocusEvent(e)}onFormElementUpdate(e){if(e){Ember.get(e,"urn")===this._buildFormElementUrn("NAME")&&this._handleCompanyNameInput(e)
+this._onFormElementUpdate(e)}}submitForm(e){e.preventDefault()
+Object.assign(this,{showSubmissionError:!1,isSubmitting:!0,errorMessageKey:!1})
+if(this._validateForm()){const e=this._collectFormResponses()
+this.args.submitPageCreateForm({formUrn:Ember.get(this.args,"createFormData.pageCreationFormUrn"),formElementResponses:e}).catch((e=>{var t,r,a,n,o,i
+if(e&&!e.isAdapterError)throw e
+Object.assign(this,{showSubmissionError:!0,isSubmitting:!1})
+const l=null==e||null===(t=e.errors)||void 0===t||null===(r=t[0])||void 0===r?void 0:r.code
+Number(null==e||null===(a=e.errors)||void 0===a||null===(n=a[0])||void 0===n?void 0:n.status)===g.httpStatus.S_403_FORBIDDEN&&l?this.errorMessageKey=ae[l]:10===(null==e||null===(o=e.errors)||void 0===o||null===(i=o[0])||void 0===i?void 0:i.serviceErrorCode)&&Object.assign(this,{errorMessageKey:ae[10],currentUriValue:this._getUniversalNameValue()})}))}else this.isSubmitting=!1}_validateForm(){const e=(0,m.findFormElementByProperty)(Ember.get(this.args,"createFormData.formSections"),"isInputValid",!1)
+if(e){this.firstInvalidInputSelector=`[id="${Ember.get(e,"urn")}"]`
+return!1}return!0}_collectFormResponses(){const e=[];(0,m.iterateOverFormElements)(Ember.get(this.args,"createFormData.formSections"),(t=>{Ember.get(t,"response.formElementUrn")&&e.push(Ember.get(t,"response"))}))
+return e}_onFormElementUpdate(e){this._handleCustomValidation(e)
+this._setPagePreviewData(e)}_getUniversalNameValue(){const e=(0,m.findFormElementByProperty)(Ember.get(this.args,"createFormData.formSections"),"urn",this._buildFormElementUrn("LINKEDIN_URL"))
+return(0,m.getFormElementResponseAsString)(e)}_initializeView(){(0,m.iterateOverFormElements)(Ember.get(this.args,"createFormData.formSections"),(e=>{if(Ember.get(e,"response")){this._setPagePreviewData(e)
+this._handleCustomValidation(e)}}))
+Ember.run.next((()=>{this.animationReady=!0}))}_buildFormElementUrn(e){return(0,s.toUrn)("organization/creation/entry-page-creation-form-element",(0,s.composeUrnId)((0,s.toUrn)("organization/creation/entry-page-creation-form",this.pageCreationFormType),e))}_isCompanyUriSynced(e){var t
+return e===(0,p.default)(null!==(t=this.enteredOrgName)&&void 0!==t?t:"")}_handleCompanyNameInput(e){var t
+const r=(0,m.getFormElementResponseAsString)(e),a=this._buildFormElementUrn("LINKEDIN_URL"),n=(0,m.findFormElementByProperty)(null!==(t=Ember.get(this.args,"createFormData.formSections"))&&void 0!==t?t:[],"urn",a),o=(0,m.getFormElementResponseAsString)(n)
+if(this._isCompanyUriSynced(o)&&n){const e=(0,p.default)(r)
+Ember.set(n,"response",{formElementUrn:a,textResponse:e})
+this._onFormElementUpdate(n)}}_handleCompanyUriInput(e){const t=(0,m.getFormElementResponseAsString)(e)
+if(t&&Ember.get(e,"isInputValid")){this.validator.validateCompanyUri(t)
+const r=this.validator.errors.companyUri
+r?this._setCustomErrorText(e,this.i18n.lookupTranslation("components/company-creation@page-create-form",r)()):(0,f.debounceTask)(this,"_validateFormElementResponse",e,t,200)}else this._resetErrorText(e)}_handleAssociatedCompanyPageInput(e){Ember.get(e,"response.selectedValuesResponse.firstObject.valueUrn")||Ember.set(e,"isInputValid",!1)
+Ember.get(e,"isInputValid")?(0,f.debounceTask)(this,"_validateFormElementResponse",e,Ember.get(e,"response.textResponse"),200):this._resetErrorText(e)}_setCustomErrorText(e,t){const r=Ember.get(e,"urn");(0,n.default)(this,J)[r]||((0,n.default)(this,J)[r]=Ember.get(e,"errorText"))
+Ember.setProperties(e,{isInputValid:!1,errorText:t})}_resetErrorText(e){const t=Ember.get(e,"urn");(0,n.default)(this,J)[t]&&Ember.set(e,"errorText",(0,n.default)(this,J)[t])}_validateFormElementResponse(e,r){var a
+this.validatingResponse=!0;(a=this.store.adapterFor("-ember-m3")).ajax.apply(a,(0,t.default)((0,u.validatePageCreationFormResponseRequest)({formElementResponse:Ember.get(e,"response")}))).then((t=>{const a=(0,m.getFormElementResponseAsString)(e)
+this.isDestroying||a!==r||(t?this._setCustomErrorText(e,Ember.get(t,"data.value")):this._resetErrorText(e))})).finally((()=>{this.isDestroying||(this.validatingResponse=!1)}))}_handleCustomValidation(e){const t=Ember.get(e,"urn")
+t===this._buildFormElementUrn("LINKEDIN_URL")?this._handleCompanyUriInput(e):t===this._buildFormElementUrn("ASSOCIATED_COMPANY_PAGE")&&this._handleAssociatedCompanyPageInput(e)}_setPagePreviewData(e){var t,r
+const a=null!==(t=(null!==(r=Ember.get(this.args,"createFormData.pagePreviewItemsMetadata"))&&void 0!==r?r:[]).findBy("pageElementUrn",Ember.get(e,"urn")))&&void 0!==t?t:{},n=Ember.get(a,"pagePreviewItem"),o=ee[n]
+if(o){const t=(0,m.getFormElementResponseAsString)(e)
+"LOGO"===n?t?this._loadCompanyImage(t,1).then((e=>{e&&!this.isDestroying&&(this[o]=e.data.value)})):this[o]=null:this[o]=t}}_loadCompanyImage(e,r){var a
+return 5===r?Ember.RSVP.reject("Failed to retrieve company image."):(a=this.store.adapterFor("-ember-m3")).ajax.apply(a,(0,t.default)((0,u.getCompanyImageRequest)(e))).catch((t=>{(0,f.runTask)(this,(()=>{this._loadCompanyImage(e,r+1)}),1e3)
+if(t&&!t.isAdapterError)throw t}))}_fireElementFocusEvent(e){const t=Ember.get(e,"urn"),{pageCreationFormElement:r}=(0,c.urnToObject)(t)
+if(r&&2===r.length){const e=r[1],t=re[e]
+if(t){this.tracking.fireInteractionEvent(t,"FOCUS")}}}}),N=(0,o.default)(j.prototype,"tracking",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),A=(0,o.default)(j.prototype,"i18n",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),L=(0,o.default)(j.prototype,"store",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),U=(0,o.default)(j.prototype,"lix",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),q=(0,o.default)(j.prototype,"verificationChecked",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),B=(0,o.default)(j.prototype,"validatingResponse",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),H=(0,o.default)(j.prototype,"isSubmitting",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),V=(0,o.default)(j.prototype,"showSubmissionError",[F],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),K=(0,o.default)(j.prototype,"errorMessageKey",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),G=(0,o.default)(j.prototype,"currentUriValue",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),W=(0,o.default)(j.prototype,"enteredOrgLogo",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),Y=(0,o.default)(j.prototype,"enteredOrgName",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),X=(0,o.default)(j.prototype,"enteredOrgIndustry",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),Z=(0,o.default)(j.prototype,"enteredOrgTagline",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),$=(0,o.default)(j.prototype,"animationReady",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),Q=(0,o.default)(j.prototype,"firstInvalidInputSelector",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),(0,o.default)(j.prototype,"onFormElementFocus",[R],Object.getOwnPropertyDescriptor(j.prototype,"onFormElementFocus"),j.prototype),(0,o.default)(j.prototype,"onFormElementUpdate",[S],Object.getOwnPropertyDescriptor(j.prototype,"onFormElementUpdate"),j.prototype),(0,o.default)(j.prototype,"submitForm",[M],Object.getOwnPropertyDescriptor(j.prototype,"submitForm"),j.prototype),j)
+e.default=ne}))
+define("company-creation/components/page-create-portal-btn",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component"],(function(e,t,r,a,n,o){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i,l,s,c
+const m={"urn:li:fs_pageCreationForm:SMB":"page_create_portal_smb_btn","urn:li:fs_pageCreationForm:ORGANIZATION":"page_create_portal_organization_btn","urn:li:fs_pageCreationForm:BRAND":"page_create_portal_brand_btn","urn:li:fs_pageCreationForm:SCHOOL":"page_create_portal_school_btn"}
+let p=(i=Ember._tracked,l=Ember._action,s=class extends o.default{constructor(){super(...arguments);(0,t.default)(this,"isLoading",c,this)
+this.dataControlName=m[Ember.get(this.args,"pageCategory.pageCreationFormUrn")]||""}onClickAction(){this.isLoading=!0
+this.args.handleButtonClick(Ember.get(this.args,"pageCategory.pageCreationFormUrn")).finally((()=>{this.isLoading=!1}))}},c=(0,a.default)(s.prototype,"isLoading",[i],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),(0,a.default)(s.prototype,"onClickAction",[l],Object.getOwnPropertyDescriptor(s.prototype,"onClickAction"),s.prototype),s)
+e.default=p}))
+define("company-creation/components/page-create-portal",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component"],(function(e,t,r,a,n,o){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i,l,s,c,m,p
+let d=(i=Ember.inject.service("lix"),l=Ember._tracked,s=Ember._action,c=class extends o.default{constructor(){super(...arguments);(0,t.default)(this,"lix",m,this);(0,t.default)(this,"showFormRequestError",p,this)}get isReflowEnabled(){return this.lix.getTreatmentIsEnabled("voyager.web.infraux-is-reflow-enabled")}handleButtonClick(e){this.showFormRequestError=!1
+return this.args.loadCreateForm(e).catch((e=>{this.showFormRequestError=!0
+if(e&&!e.isAdapterError)throw e}))}},m=(0,a.default)(c.prototype,"lix",[i],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),p=(0,a.default)(c.prototype,"showFormRequestError",[l],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),(0,a.default)(c.prototype,"handleButtonClick",[s],Object.getOwnPropertyDescriptor(c.prototype,"handleButtonClick"),c.prototype),c)
+e.default=d}))
+define("company-creation/components/page-create-preview",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","tracked-toolbox"],(function(e,t,r,a,n,o,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var l,s,c
+let m=(l=Ember.inject.service("lix"),s=class extends o.default{constructor(){super(...arguments);(0,t.default)(this,"lix",c,this)}get placeholderTextMap(){var e,t
+return null!==(e=null===(t=this.args.pagePreviewItemsMetadata)||void 0===t?void 0:t.reduce(((e,t)=>{e[Ember.get(t,"pagePreviewItem")]=Ember.get(t,"placeholderText")
+return e}),{}))&&void 0!==e?e:{}}get isReflowEnabled(){return this.lix.getTreatmentIsEnabled("voyager.web.infraux-is-reflow-enabled")}get isDarkModeEnabled(){return this.lix.getTreatmentIsEnabled("voyager.web.infraux-dark-mode")}},c=(0,a.default)(s.prototype,"lix",[l],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,a.default)(s.prototype,"placeholderTextMap",[i.cached],Object.getOwnPropertyDescriptor(s.prototype,"placeholderTextMap"),s.prototype),s)
+e.default=m}))
+define("company-creation/components/page-screenshots",["exports","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@glimmer/component","global-utils/utils/is-browser","global-utils/utils/get-asset-url-for-environment","ember-test-waiters","ember-lifeline"],(function(e,t,r,a,n,o,i,l){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var s,c
+const m=(0,i.buildWaiter)("company-creation-common:page-screenshots")
+let p=(s=Ember._action,c=class extends a.default{constructor(){super(...arguments);(0,t.default)(this,"desktopScreenshot",(0,o.default)("assets/img/organization/desktop-screenshot.png"));(0,t.default)(this,"mobileScreenshot",(0,o.default)("assets/img/organization/mobile-screenshot.png"))
+this.desktopImgLoadWaiterToken=m.beginAsync()
+this.mobileImgLoadWaiterToken=m.beginAsync()}handleImgLoadEvents(e){let{target:t}=e
+t.src.includes(this.desktopScreenshot)?m.endAsync(this.desktopImgLoadWaiterToken):m.endAsync(this.mobileImgLoadWaiterToken);(0,i.hasPendingWaiters)()||this._animateScreenshots()}_animateScreenshots(){(0,l.scheduleTask)(this,"render",(()=>{n.default&&document.querySelectorAll(".org-page-create-portal__animated-example").forEach((function(e){e.classList.add("org-page-create-portal__animated-example--loaded")}))}))}},(0,r.default)(c.prototype,"handleImgLoadEvents",[s],Object.getOwnPropertyDescriptor(c.prototype,"handleImgLoadEvents"),c.prototype),c)
+e.default=p}))
+define("company-creation/config/environment",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+let t
+try{const e="company-creation/config/environment",r=document.querySelector('meta[name="'+e+'"]').getAttribute("content")
+t=JSON.parse(unescape(r))}catch(e){t={}}var r=t
+e.default=r}))
+define("company-creation/controllers/create",["exports","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor"],(function(e,t,r){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var a,n
+let o=(a=Ember._action,n=class extends Ember.Controller{constructor(){super(...arguments);(0,t.default)(this,"queryParams",["type",{token:"t"},"src"])}resetType(){Ember.set(this,"type",null)}},(0,r.default)(n.prototype,"resetType",[a],Object.getOwnPropertyDescriptor(n.prototype,"resetType"),n.prototype),n)
+e.default=o}))
+define.alias("ember-m3/adapters/interop-debug-adapter","company-creation/data-adapter")
+define("company-creation/engine",["exports","ember-engines/engine","ember-load-initializers","extended/resolver"],(function(e,t,r,a){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const n="company-creation",o=t.default.extend({Resolver:a.default,modulePrefix:n});(0,r.default)(o,n)
+var i=o
+e.default=i}))
+define.alias("ember-named-blocks-polyfill/helpers/-has-block-params","company-creation/helpers/-has-block-params")
+define.alias("ember-named-blocks-polyfill/helpers/-has-block","company-creation/helpers/-has-block")
+define.alias("ember-named-blocks-polyfill/helpers/-is-named-block-invocation","company-creation/helpers/-is-named-block-invocation")
+define.alias("ember-named-blocks-polyfill/helpers/-named-block-invocation","company-creation/helpers/-named-block-invocation")
+define.alias("ember-cli-pemberly-i18n/helpers/format-number","company-creation/helpers/format-number")
+define.alias("artdeco-icons-web/helpers/li-icon","company-creation/helpers/li-icon")
+define("company-creation/helpers/org-type-icon-class-name",["exports","urn-utils"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.getOrgIconClassName=a
+e.default=void 0
+const r={SMB:"company-buildings-48",ORGANIZATION:"industry-48",BRAND:"ui-dashboard-48",SCHOOL:"school-48"}
+function a(e){let[a]=e
+const n=r.ORGANIZATION
+if(a){const e=(0,t.extractEntityInfoFromUrn)(a).id
+if(r[e])return r[e]}return n}var n=Ember.Helper.helper(a)
+e.default=n}))
+define.alias("ember-route-action-helper/helpers/route-action","company-creation/helpers/route-action")
+define.alias("ember-app-scheduler/helpers/route-idle","company-creation/helpers/route-idle")
+define.alias("ember-set-helper/helpers/set","company-creation/helpers/set")
+define.alias("ember-cli-pemberly-i18n/helpers/t","company-creation/helpers/t")
+define("company-creation/initializers/artdeco",["exports","artdeco-eyeglass"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.initialize=n
+e.default=void 0
+const r=[t.default.contextClasses,t.default.floatingLabel,t.default.focusOutline]
+function a(e,t){const a=e[t]
+e[t]=function(){r.forEach((e=>e&&"function"==typeof e.teardown&&e.teardown()))
+a&&"function"==typeof a&&a.call(e)}}function n(e){if("undefined"!=typeof document){r.forEach((e=>e.install()))
+"function"==typeof e.willDestroy?a(e,"willDestroy"):"function"==typeof e.destroy&&a(e,"destroy")}}var o={name:"artdeco",initialize:n}
+e.default=o}))
+define("company-creation/initializers/icons",["exports","artdeco-icons-web/src/icons","company-creation/config/environment"],(function(e,t,r){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+function a(e){throw e}var n={name:"icons",initialize:function(){const{environment:e,APP:n}=r.default
+let o,i
+n&&({artdecoCustomSpriteUrl:o,artdecoCustomSpriteName:i}=n)
+const l="test"!==e
+t.default.load(l,o,i).catch(a)}}
+e.default=n}))
+define.alias("ember-m3/initializers/m3-store","company-creation/initializers/m3-store")
+define("company-creation/initializers/override-safestring",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.initialize=n
+e.default=void 0
+const t="ember-glimmer",r="ember-htmlbars/utils/string",a="@ember/-internals/glimmer"
+function n(){let e,n=Ember.__loader.require.has
+if(n(a))e=Ember.__loader.require(a).SafeString
+else if(n(t))e=Ember.__loader.require(t).SafeString
+else{if(!n(r))throw new Error("Cannot locate SafeString class for overriding")
+e=Ember.__loader.require(r).SafeString}e.prototype.toHTML=function(){return jSecure.sanitizeHTML(this.toString())}
+e.prototype.toString=function(){return`${this.string}`}}var o={name:"override-safestring",initialize:n}
+e.default=o}))
+define.alias("@ember/render-modifiers/modifiers/did-insert","company-creation/modifiers/did-insert")
+define.alias("@ember/render-modifiers/modifiers/did-update","company-creation/modifiers/did-update")
+define.alias("@ember/render-modifiers/modifiers/will-destroy","company-creation/modifiers/will-destroy")
+define("company-creation/routes/create",["exports","@babel/runtime/helpers/esm/toConsumableArray","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","company-creation/utils/data-providers","company-creation/utils/requests/page-creation-form-response"],(function(e,t,r,a,n,o,i,l){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var s,c,m,p,d,u,g
+let f=(s=Ember.inject.service("store"),c=Ember.inject.service("locale"),m=Ember._action,p=Ember._action,d=class extends Ember.Route{constructor(){super(...arguments);(0,r.default)(this,"store",u,this);(0,r.default)(this,"locale",g,this);(0,a.default)(this,"pageKey","flagship3_company_creation");(0,a.default)(this,"queryParams",{type:{refreshModel:!0}})}model(e){var t
+const{store:r}=this
+return Ember.RSVP.hash({confirmedEmails:(0,i.fetchConfirmedEmailsForCurrentUser)(r),createPortalData:"smb"!==(null==e||null===(t=e.type)||void 0===t?void 0:t.toLowerCase())?(0,i.fetchCreatePortal)(r):void 0})}resetController(e,t){super.resetController.apply(this,arguments)
+t&&Ember.setProperties(e,{type:void 0,token:void 0,src:void 0})}setupController(e){super.setupController.apply(this,arguments)
+const t=Ember.get(e,"type")
+"smb"!==(null==t?void 0:t.toLowerCase())&&Ember.setProperties(e,{type:void 0,token:void 0,src:void 0})}afterModel(e){Ember.isEmpty(Ember.get(e.confirmedEmails,"elements"))&&this.replaceWith("noemail")}_redirectToAdminOverview(e){this.transitionToExternal("organization-admin.admin.overview",e)}getCreateFormData(e){const{store:t}=this
+return(0,i.fetchCreateForm)(t,e)}submitPageCreateForm(e){var r
+return(r=this.store.adapterFor("-ember-m3")).ajax.apply(r,(0,t.default)((0,l.submitPageCreationFormResponseRequest)(e,this.controller.token,this.controller.src))).then((e=>{this._redirectToAdminOverview(e.newId)}))}},u=(0,n.default)(d.prototype,"store",[s],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),g=(0,n.default)(d.prototype,"locale",[c],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,n.default)(d.prototype,"getCreateFormData",[m],Object.getOwnPropertyDescriptor(d.prototype,"getCreateFormData"),d.prototype),(0,n.default)(d.prototype,"submitPageCreateForm",[p],Object.getOwnPropertyDescriptor(d.prototype,"submitPageCreateForm"),d.prototype),d)
+e.default=f}))
+define.alias("artdeco-hoverables/services/artdeco-hoverable","company-creation/services/artdeco-hoverable")
+define.alias("client-sensor-web/services/client-sensor","company-creation/services/client-sensor")
+define.alias("ember-date-service/services/date","company-creation/services/date")
+define.alias("@linkedin/ember-pem/services/internal-event-utils","company-creation/services/internal-event-utils")
+define.alias("@linkedin/ember-pem/services/internal-pem-tracking","company-creation/services/internal-pem-tracking")
+define.alias("ember-m3/services/m3-schema-manager","company-creation/services/m3-schema-manager")
+define.alias("@linkedin/ember-pem/services/pem-tracking","company-creation/services/pem-tracking")
+define.alias("ember-cli-pemberly-m3/services/store","company-creation/services/store")
+define("company-creation/templates/application",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"N24k3NdR",block:'{"symbols":[],"statements":[[1,[30,[36,1],[[30,[36,0],null,null]],null]],[2,"\\n"]],"hasEval":false,"upvars":["-outlet","component"]}',meta:{moduleName:"company-creation/templates/application.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/page-create-base",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"F58pH6a4",block:'{"symbols":["@createPortalData","@resetType","@submitPageCreateForm","&default"],"statements":[[18,4,[[30,[36,1],null,[["createForm","createPortal","createPortalData","createFormData"],[[30,[36,0],["company-creation@page-create-form"],[["createFormData","loadCreatePortal","submitPageCreateForm","resetType"],[[32,0,["createFormData"]],[32,0,["loadCreatePortal"]],[32,3],[32,2]]]],[30,[36,0],["company-creation@page-create-portal"],[["loadCreateForm","createPortalData"],[[32,0,["loadCreateForm"]],[32,1]]]],[32,1],[32,0,["createFormData"]]]]]]]],"hasEval":false,"upvars":["component","hash"]}',meta:{moduleName:"company-creation/templates/components/page-create-base.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/page-create-form-section",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"zvX0/GBF",block:'{"symbols":["formElement","@showAllErrors","@onFormElementFocus","@onFormElementUpdate","@titleText","@formElements"],"statements":[[2,"\\n"],[10,"section"],[14,0,"org-page-create-form-section org-page-create-body__animated-section artdeco-card"],[12],[2,"\\n"],[6,[37,1],[[32,5]],null,[["default"],[{"statements":[[2,"    "],[10,"h3"],[14,0,"org-page-create-form-section__title"],[12],[2,"\\n      "],[1,[32,5]],[2,"\\n    "],[13],[2,"\\n"]],"parameters":[]}]]],[6,[37,3],[[30,[36,2],[[30,[36,2],[[32,6]],null]],null]],null,[["default"],[{"statements":[[2,"    "],[8,"form-builder@form-element",[],[["@formElement","@response","@showAllErrors","@onFormElementFocus","@onFormElementUpdate","@formElementA11yHelpText"],[[32,1],[32,1,["response"]],[32,2],[32,3],[32,4],[30,[36,0],["i18n_ally_help_text","company-creation/templates/components/page-create-form-section"],[["title"],[[32,1,["titleText"]]]]]]],null],[2,"\\n"]],"parameters":[1]}]]],[13]],"hasEval":false,"upvars":["t","if","-track-array","each"]}',meta:{moduleName:"company-creation/templates/components/page-create-form-section.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/page-create-form",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"yXpiT4U5",block:'{"symbols":["formSection","@createFormData","@loadCreatePortal"],"statements":[[2,"\\n"],[11,"div"],[4,[38,6],null,[["pageKey","routeName","currentRoute"],[[32,0,["pageKey"]],[30,[36,5],[[30,[36,4],["outletState"],null],"render.name"],null],[30,[36,5],[[30,[36,4],["outletState"],null],"render"],null]]]],[4,[38,7],null,[["onSelector","when"],[[30,[36,2],["[id=\'",[32,2,["formSections","firstObject","formElements","firstObject","urn"]],"\']"],null],[32,0,["shouldFocusFirstFormElement"]]]]],[12],[2,"\\n  "],[8,"company-creation@page-create-header",[],[["@loadCreatePortal","@createFormData","@isReflowEnabled"],[[30,[36,8],[[32,3]],null],[32,2],[32,0,["isReflowEnabled"]]]],null],[2,"\\n\\n  "],[10,"section"],[15,0,[31,["mt5 ",[30,[36,3],[[32,0,["isReflowEnabled"]],"grid align-items-flex-start","neptune-grid org-page-create-body"],null],[30,[36,3],[[32,0,["animationReady"]]," org-page-create-body--animate"],null]]]],[12],[2,"\\n    "],[11,"form"],[16,0,[31,[[30,[36,3],[[32,0,["isReflowEnabled"]],"grid__col grid__col--lg-12","org-page-create-form"],null]," pb6 display-flex flex-column"]]],[24,"role","main"],[4,[38,9],["submit",[32,0,["submitForm"]]],null],[4,[38,10],null,[["target","when","options"],[[32,0,["firstInvalidInputSelector"]],[32,0,["showAllErrors"]],[30,[36,0],null,[["block"],["center"]]]]]],[4,[38,7],null,[["onSelector","when"],[[32,0,["firstInvalidInputSelector"]],[32,0,["showAllErrors"]]]]],[12],[2,"\\n      "],[10,"div"],[14,0,"org-page-create-form__required-note t-12 t-black--light mb3"],[12],[2,"\\n        "],[1,[30,[36,1],["i18n_organization_indicates_required","company-creation/templates/components/page-create-form"],null]],[2,"\\n      "],[13],[2,"\\n\\n"],[6,[37,12],[[30,[36,11],[[30,[36,11],[[32,2,["formSections"]]],null]],null]],null,[["default"],[{"statements":[[2,"        "],[8,"company-creation@page-create-form-section",[],[["@titleText","@formElements","@onFormElementUpdate","@onFormElementFocus","@showAllErrors"],[[32,1,["titleText"]],[32,1,["formElements"]],[32,0,["onFormElementUpdate"]],[32,0,["onFormElementFocus"]],[32,0,["showAllErrors"]]]],null],[2,"\\n"]],"parameters":[1]}]]],[2,"\\n      "],[10,"div"],[14,0,"org-page-create-form__verification org-page-create-body__animated-section"],[12],[2,"\\n        "],[8,"input",[[24,3,"creation-verification"],[24,1,"creation-verification"],[4,[38,13],["verification_checkbox"],null]],[["@type","@checked"],["checkbox",[32,0,["verificationChecked"]]]],null],[2,"\\n        "],[10,"label"],[14,"for","creation-verification"],[12],[2,"\\n          "],[10,"span"],[14,0,"visually-hidden"],[12],[2,"\\n            "],[1,[30,[36,1],["i18n_page_terms_and_verify_ownership_a11y","company-creation/templates/components/page-create-form"],null]],[2,"\\n          "],[13],[2,"\\n        "],[13],[2,"\\n        "],[11,"p"],[24,0,"t-14 mt2 pl6"],[4,[38,13],["org_page_create_form_terms_link"],null],[12],[2,"\\n          "],[1,[30,[36,1],["i18n_page_terms_and_verify_ownership","company-creation/templates/components/page-create-form"],[["termsLink"],[[30,[36,0],null,[["target","href","data-test-page-create-form-terms-link"],["_blank",[30,[36,2],["https://legal.",[30,[36,14],[false],null],"/linkedin-pages-terms"],null],true]]]]]]],[2,"\\n        "],[13],[2,"\\n      "],[13],[2,"\\n\\n      "],[10,"div"],[14,0,"org-page-create-body__animated-section align-self-flex-end mt5"],[12],[2,"\\n        "],[8,"artdeco-button@artdeco-button",[[4,[38,13],["create_page_btn"],null]],[["@size","@class","@disabled"],["3","org-page-create-form__submit-btn",[32,0,["disableSubmit"]]]],[["default"],[{"statements":[[2,"\\n          "],[1,[30,[36,1],["i18n_organization_create_page","company-creation/templates/components/page-create-form"],null]],[2,"\\n        "]],"parameters":[]}]]],[2,"\\n      "],[13],[2,"\\n\\n"],[6,[37,3],[[32,0,["showSubmissionError"]]],null,[["default"],[{"statements":[[2,"        "],[10,"p"],[14,0,"org-page-create-form__error mt4"],[12],[2,"\\n"],[6,[37,3],[[32,0,["errorMessageKey"]]],null,[["default","else"],[{"statements":[[2,"            "],[8,"artdeco-inline-feedback@artdeco-inline-feedback",[],[["@message","@type"],[[30,[36,1],[[32,0,["errorMessageKey"]],"company-creation/templates/components/page-create-form"],[["linkInfo","pageLink","duplicateNameLinkInfo"],[[30,[36,0],null,[["target","href","id","rel"],["_blank","/help/linkedin/answer/100826","page-create-error-learn-more-link","noopener noreferrer"]]],[30,[36,0],null,[["target","href","id"],["_blank",[30,[36,2],["/company/",[32,0,["currentUriValue"]]],null],"page-create-error-page-link"]]],[30,[36,0],null,[["target","href","id","rel"],["_blank","/help/linkedin/answer/17481","page-create-error-learn-more-link","noopener noreferrer"]]]]]],"error"]],null],[2,"\\n"]],"parameters":[]},{"statements":[[2,"            "],[8,"artdeco-inline-feedback@artdeco-inline-feedback",[],[["@message","@type"],[[30,[36,1],["i18n_organization_create_submission_error","company-creation/templates/components/page-create-form"],[["linkInfo"],[[30,[36,0],null,[["target","href","id","rel"],["_blank","/help/linkedin/answer/100826","page-create-error-learn-more-link","noopener noreferrer"]]]]]],"error"]],null],[2,"\\n"]],"parameters":[]}]]],[2,"        "],[13],[2,"\\n"]],"parameters":[]}]]],[2,"    "],[13],[2,"\\n\\n    "],[10,"aside"],[15,0,[31,[[30,[36,3],[[32,0,["isReflowEnabled"]],"grid__col grid__col--lg-12"],null]," org-page-create-preview org-page-create-body__animated-section"]]],[14,"role","presentation"],[12],[2,"\\n      "],[8,"company-creation@page-create-preview",[],[["@pagePreviewTitle","@pagePreviewTooltip","@pagePreviewItemsMetadata","@enteredOrgName","@enteredOrgLogo","@enteredOrgIndustry","@enteredOrgTagline"],[[32,2,["pagePreviewTitle"]],[32,2,["pagePreviewTooltip"]],[32,2,["pagePreviewItemsMetadata"]],[32,0,["enteredOrgName"]],[32,0,["enteredOrgLogo"]],[32,0,["enteredOrgIndustry"]],[32,0,["enteredOrgTagline"]]]],null],[2,"\\n    "],[13],[2,"\\n  "],[13],[2,"\\n"],[13],[2,"\\n"]],"hasEval":false,"upvars":["hash","t","concat","if","-get-dynamic-var","get","ember-cli-pemberly-tracking@track-render","global-modifiers@focus","global-helpers@optional","on","global-modifiers@scroll-into-view","-track-array","each","ember-cli-pemberly-tracking@track-interaction","global-helpers@get-domain"]}',meta:{moduleName:"company-creation/templates/components/page-create-form.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/page-create-header",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"xfLtkHLn",block:'{"symbols":["&attrs","@isReflowEnabled","@loadCreatePortal","@createFormData"],"statements":[[2,"\\n"],[11,"div"],[24,0,"org-page-create-header"],[17,1],[12],[2,"\\n  "],[10,"section"],[15,0,[30,[36,0],[[32,2],"grid block","neptune-grid"],null]],[12],[2,"\\n    "],[8,"artdeco-button@artdeco-button",[[4,[38,1],["back_btn"],null]],[["@icon","@type","@size","@click"],["arrow-left-icon","tertiary","4",[32,3]]],[["default"],[{"statements":[[2,"\\n      "],[1,[30,[36,2],["i18n_organization_back","company-creation/templates/components/page-create-header"],null]],[2,"\\n    "]],"parameters":[]}]]],[2,"\\n\\n    "],[10,"div"],[14,0,"mt3 display-flex align-items-center"],[12],[2,"\\n      "],[10,"i"],[15,0,[31,["illustration-48 flex-shrink-zero ",[30,[36,3],[[32,4,["pageCreationFormUrn"]]],null]]]],[14,"aria-hidden","true"],[12],[13],[2,"\\n      "],[10,"h1"],[14,0,"t-18 t-black t-normal ml4"],[12],[2,"\\n        "],[1,[30,[36,4],[[32,4,["headline"]]],null]],[2,"\\n      "],[13],[2,"\\n    "],[13],[2,"\\n  "],[13],[2,"\\n"],[13],[2,"\\n"]],"hasEval":false,"upvars":["if","ember-cli-pemberly-tracking@track-interaction","t","company-creation@org-type-icon-class-name","text-view-model@text-view-model"]}',meta:{moduleName:"company-creation/templates/components/page-create-header.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/page-create-portal-btn",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"85P+bdhl",block:'{"symbols":["&attrs","@pageCategory"],"statements":[[2,"\\n"],[11,"button"],[24,0,"org-page-create-portal__organization-btn"],[16,"disabled",[32,0,["isLoading"]]],[17,1],[24,4,"button"],[4,[38,1],["click",[32,0,["onClickAction"]]],null],[4,[38,2],[[32,0,["dataControlName"]]],null],[12],[2,"\\n  "],[10,"i"],[15,0,[31,["illustration-48 ",[30,[36,3],[[32,2,["pageCreationFormUrn"]]],null]]]],[14,"aria-hidden","true"],[12],[13],[2,"\\n  "],[10,"span"],[14,0,"t-16 t-black t-bold mt4"],[12],[2,"\\n    "],[1,[30,[36,4],[[32,2,["title"]]],null]],[2,"\\n  "],[13],[2,"\\n  "],[10,"span"],[14,0,"t-14 t-black t-normal"],[12],[2,"\\n    "],[1,[30,[36,4],[[32,2,["subtitle"]]],null]],[2,"\\n  "],[13],[2,"\\n\\n"],[6,[37,5],[[32,0,["isLoading"]]],null,[["default"],[{"statements":[[2,"    "],[10,"div"],[14,0,"org-page-create-portal__organization-btn-loader display-flex align-items-center justify-center"],[12],[2,"\\n      "],[10,"span"],[14,0,"visually-hidden"],[12],[2,"\\n        "],[1,[30,[36,0],["i18n_loading","company-creation/templates/components/page-create-portal-btn"],null]],[2,"\\n      "],[13],[2,"\\n      "],[8,"artdeco-loader@artdeco-loader",[],[["@size"],["small"]],null],[2,"\\n    "],[13],[2,"\\n"]],"parameters":[]}]]],[13]],"hasEval":false,"upvars":["t","on","ember-cli-pemberly-tracking@track-interaction","company-creation@org-type-icon-class-name","text-view-model@text-view-model","if"]}',meta:{moduleName:"company-creation/templates/components/page-create-portal-btn.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/page-create-portal",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"gYi6aPyy",block:'{"symbols":["pageCategory","@createPortalData"],"statements":[[2,"\\n"],[11,"div"],[16,0,[31,["org-page-create-portal ",[30,[36,0],[[32,0,["isReflowEnabled"]],"grid","neptune-grid"],null]]]],[4,[38,5],null,[["pageKey","routeName","currentRoute"],["flagship3_company_creation_portal",[30,[36,4],[[30,[36,3],["outletState"],null],"render.name"],null],[30,[36,4],[[30,[36,3],["outletState"],null],"render"],null]]]],[12],[2,"\\n  "],[10,"h1"],[15,0,[31,["t-32 t-black t-light text-align-center org-page-create-portal__organizations-header ",[30,[36,0],[[32,0,["isReflowEnabled"]],"grid__col"],null]]]],[12],[2,"\\n    "],[8,"text-view-model@text-view-model-v2",[],[["@tvm"],[[32,2,["headline"]]]],null],[2,"\\n  "],[13],[2,"\\n\\n  "],[10,"p"],[15,0,[31,["t-14 t-black t-normal text-align-center ",[30,[36,0],[[32,0,["isReflowEnabled"]],"grid__col"],null]]]],[12],[2,"\\n    "],[8,"text-view-model@text-view-model-v2",[],[["@tvm"],[[32,2,["subHeadline"]]]],null],[2,"\\n  "],[13],[2,"\\n\\n  "],[10,"div"],[15,0,[31,["org-page-create-portal__organization-types mv6 ",[30,[36,0],[[32,0,["isReflowEnabled"]],"grid__col"],null]]]],[12],[2,"\\n"],[6,[37,7],[[30,[36,6],[[30,[36,6],[[32,2,["pageCategoryData"]]],null]],null]],null,[["default"],[{"statements":[[2,"      "],[8,"company-creation@page-create-portal-btn",[[24,0,"mt4"]],[["@pageCategory","@handleButtonClick"],[[32,1],[32,0,["handleButtonClick"]]]],null],[2,"\\n"]],"parameters":[1]}]]],[2,"  "],[13],[2,"\\n\\n"],[6,[37,0],[[32,0,["showFormRequestError"]]],null,[["default"],[{"statements":[[2,"    "],[10,"p"],[15,0,[31,["mt4 display-flex justify-center ",[30,[36,0],[[32,0,["isReflowEnabled"]],"grid__col"],null]]]],[12],[2,"\\n      "],[8,"artdeco-inline-feedback@artdeco-inline-feedback",[],[["@message","@type"],[[30,[36,2],["i18n_organization_create_form_request_error","company-creation/templates/components/page-create-portal"],[["linkInfo"],[[30,[36,1],null,[["target","href","id","rel"],["_blank","/help/linkedin/answer/100826","page-create-error-learn-more-link","noopener noreferrer"]]]]]],"error"]],null],[2,"\\n    "],[13],[2,"\\n"]],"parameters":[]}]]],[2,"\\n  "],[8,"company-creation@page-screenshots",[[16,0,[30,[36,0],[[32,0,["isReflowEnabled"]],"grid__col"],null]]],[[],[]],null],[2,"\\n"],[13],[2,"\\n"]],"hasEval":false,"upvars":["if","hash","t","-get-dynamic-var","get","ember-cli-pemberly-tracking@track-render","-track-array","each"]}',meta:{moduleName:"company-creation/templates/components/page-create-portal.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/page-create-preview",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"RESgDjYn",block:'{"symbols":["trigger","@enteredOrgLogo","@enteredOrgName","@enteredOrgIndustry","@enteredOrgTagline","@pagePreviewTooltip","&attrs","@pagePreviewTitle"],"statements":[[2,"\\n"],[8,"artdeco-card@artdeco-card",[[16,0,[30,[36,6],["org-page-create-preview__container ",[30,[36,5],[[32,0,["isReflowEnabled"]],"org-page-create-preview--fixed"],null]],null]],[17,7]],[[],[]],[["default"],[{"statements":[[2,"\\n  "],[10,"div"],[14,1,"org-page-create-preview__tooltip-outlet"],[12],[13],[2,"\\n  "],[10,"div"],[14,0,"org-page-create-preview__header t-14 t-black t-bold p3"],[12],[2,"\\n    "],[1,[30,[36,2],[[32,8]],null]],[2,"\\n"],[6,[37,1],[[32,6]],null,[["default"],[{"statements":[[2,"      "],[8,"artdeco-hoverables@artdeco-hoverable-trigger",[[24,0,"inline-block"]],[["@on","@to"],["click","org-page-create-preview__tooltip-outlet"]],[["default"],[{"statements":[[2,"\\n        "],[8,"artdeco-button@artdeco-button",[[24,0,"fb-form-element__tooltip-trigger"],[16,"aria-label",[30,[36,0],["i18n_organization_page_preview_tooltip_description","company-creation/templates/components/page-create-preview"],null]],[16,"aria-controls",[32,1,["ariaId"]]],[16,"aria-expanded",[32,1,["ariaExpanded"]]]],[["@icon","@color","@size","@type","@circle"],["question-pebble-icon","muted",1,"tertiary",true]],null],[2,"\\n        "],[8,[32,1,["artdeco-hoverable-content"]],[],[["@theme","@to","@contentClass"],["inverse","org-page-create-preview__tooltip-outlet","org-page-create-preview__tooltip"]],[["default"],[{"statements":[[2,"\\n          "],[1,[30,[36,2],[[32,6]],null]],[2,"\\n        "]],"parameters":[]}]]],[2,"\\n      "]],"parameters":[1]}]]],[2,"\\n"]],"parameters":[]}]]],[2,"  "],[13],[2,"\\n"],[6,[37,1],[[32,0,["isDarkModeEnabled"]]],null,[["default","else"],[{"statements":[[2,"  "],[10,"div"],[14,0,"org-page-create-preview__viewport-v2"],[12],[2,"\\n      "],[10,"div"],[14,0,"artdeco-card m5 p5"],[12],[2,"\\n"],[6,[37,1],[[32,2]],null,[["default","else"],[{"statements":[[2,"          "],[8,"ember-vector-images@lazy-image",[[24,0,"org-page-create-preview__logo-v2"]],[["@image","@alt","@ghostType","@width","@height"],[[32,2],[30,[36,0],["i18n_organization_logo_preview_alt","company-creation/templates/components/page-create-preview"],null],"company","104","104"]],null],[2,"\\n"]],"parameters":[]},{"statements":[[2,"          "],[8,"ember-vector-images@lazy-image",[[24,0,"org-page-create-preview__logo-v2"]],[["@alt","@ghostType","@width","@height"],[[30,[36,0],["i18n_organization_logo_preview_alt","company-creation/templates/components/page-create-preview"],null],"company","104","104"]],null],[2,"\\n"]],"parameters":[]}]]],[2,"\\n        "],[10,"h2"],[14,0,"text-heading-xlarge mt2 overflow-hidden"],[12],[2,"\\n          "],[1,[30,[36,1],[[32,3],[30,[36,3],[[32,3]],[["length"],[61]]],[30,[36,2],[[32,0,["placeholderTextMap","NAME"]]],null]],null]],[2,"\\n        "],[13],[2,"\\n\\n        "],[10,"p"],[14,0,"text-body-small mt2 overflow-hidden"],[12],[2,"\\n          "],[1,[30,[36,1],[[32,5],[30,[36,3],[[32,5]],[["length"],[120]]],[30,[36,2],[[32,0,["placeholderTextMap","TAGLINE"]]],null]],null]],[2,"\\n        "],[13],[2,"\\n\\n        "],[10,"p"],[14,0,"text-body-small t-black--light mt2 overflow-hidden"],[12],[2,"\\n          "],[1,[30,[36,4],[[32,4],[30,[36,2],[[32,0,["placeholderTextMap","INDUSTRY"]]],null]],null]],[2,"\\n        "],[13],[2,"\\n\\n        "],[8,"artdeco-button@artdeco-button",[[24,0,"mt4"]],[["@size","@icon","@text"],[2,"plus-icon",[30,[36,0],["i18n_organization_follow_button_text","company-creation/templates/components/page-create-preview"],null]]],null],[2,"\\n      "],[13],[2,"\\n    "],[13],[2,"\\n"]],"parameters":[]},{"statements":[[2,"    "],[10,"div"],[14,0,"org-page-create-preview__viewport"],[12],[2,"\\n      "],[10,"div"],[14,0,"artdeco-card ml4 p4 full-width"],[12],[2,"\\n        "],[10,"div"],[14,0,"display-flex align-items-flex-start"],[12],[2,"\\n          "],[10,"div"],[14,0,"org-page-create-preview__logo display-flex align-items-center justify-center"],[12],[2,"\\n"],[6,[37,1],[[32,2]],null,[["default","else"],[{"statements":[[2,"              "],[8,"ember-vector-images@lazy-image",[],[["@image","@alt","@ghostType","@width","@height"],[[32,2],[30,[36,0],["i18n_organization_logo_preview_alt","company-creation/templates/components/page-create-preview"],null],"company","104","104"]],null],[2,"\\n"]],"parameters":[]},{"statements":[[2,"              "],[10,"i"],[14,0,"EntityPhoto-square-7 ghost-company org-page-create-preview__ghost-logo"],[12],[13],[2,"\\n"]],"parameters":[]}]]],[2,"          "],[13],[2,"\\n\\n          "],[10,"div"],[14,0,"org-page-create-preview__company-details ml4"],[12],[2,"\\n            "],[10,"h1"],[14,0,"org-page-create-preview__title t-24 t-black--light t-light"],[12],[2,"\\n              "],[1,[30,[36,1],[[32,3],[30,[36,3],[[32,3]],[["length"],[61]]],[30,[36,2],[[32,0,["placeholderTextMap","NAME"]]],null]],null]],[2,"\\n            "],[13],[2,"\\n\\n            "],[10,"h2"],[14,0,"org-page-create-preview__industry t-14 t-black--light t-normal mb3"],[12],[2,"\\n              "],[1,[30,[36,4],[[32,4],[30,[36,2],[[32,0,["placeholderTextMap","INDUSTRY"]]],null]],null]],[2,"\\n            "],[13],[2,"\\n\\n            "],[10,"div"],[14,0,"org-page-create-preview__tagline t-14 t-black--light t-normal"],[12],[2,"\\n              "],[1,[30,[36,1],[[32,5],[30,[36,3],[[32,5]],[["length"],[120]]],[30,[36,2],[[32,0,["placeholderTextMap","TAGLINE"]]],null]],null]],[2,"\\n            "],[13],[2,"\\n          "],[13],[2,"\\n        "],[13],[2,"\\n\\n        "],[10,"div"],[14,0,"org-page-create-preview__fake-button mt5"],[12],[13],[2,"\\n      "],[13],[2,"\\n      "],[10,"div"],[14,0,"org-page-create-preview__mock-body mt5 ml4"],[12],[13],[2,"\\n    "],[13],[2,"\\n"]],"parameters":[]}]]]],"parameters":[]}]]],[2,"\\n"]],"hasEval":false,"upvars":["t","if","text-view-model@text-view-model","global-helpers@truncate-text","global-helpers@or","unless","concat"]}',meta:{moduleName:"company-creation/templates/components/page-create-preview.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/page-screenshots",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"XHmERYjR",block:'{"symbols":["&attrs"],"statements":[[2,"\\n"],[11,"div"],[24,0,"org-page-create-portal__examples pb5 pt6"],[17,1],[12],[2,"\\n  "],[11,"img"],[16,"src",[32,0,["desktopScreenshot"]]],[24,0,"org-page-create-portal__animated-example org-page-create-portal__animated-example--desktop"],[16,"alt",[31,[[30,[36,0],["i18n_organization_desktop_example_alt","company-creation/templates/components/page-screenshots"],null]]]],[24,"aria-hidden","true"],[4,[38,1],["load",[32,0,["handleImgLoadEvents"]]],null],[12],[13],[2,"\\n  "],[11,"img"],[16,"src",[32,0,["mobileScreenshot"]]],[24,0,"org-page-create-portal__animated-example org-page-create-portal__animated-example--mobile"],[16,"alt",[31,[[30,[36,0],["i18n_organization_mobile_example_alt","company-creation/templates/components/page-screenshots"],null]]]],[24,"aria-hidden","true"],[4,[38,1],["load",[32,0,["handleImgLoadEvents"]]],null],[12],[13],[2,"\\n"],[13],[2,"\\n"]],"hasEval":false,"upvars":["t","on"]}',meta:{moduleName:"company-creation/templates/components/page-screenshots.hbs"}})
+e.default=t}))
+define("company-creation/templates/components/shared/header",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"o44vKUqX",block:'{"symbols":[],"statements":[[2,"\\n"],[10,"header"],[14,0,"org-company-creation header-medium"],[12],[2,"\\n  "],[10,"div"],[14,0,"org-company-creation__header-section"],[12],[2,"\\n    "],[10,"figure"],[14,0,"org-company-creation__illustration org-company-creation__company-buildings"],[12],[13],[2,"\\n    "],[10,"p"],[14,0,"t-16 t-white t-bold mt3"],[12],[1,[30,[36,0],["i18n_organization_raise_brand_awareness","company-creation/templates/components/shared/header"],null]],[13],[2,"\\n    "],[10,"p"],[14,0,"t-14 t-white t-normal"],[12],[1,[30,[36,0],["i18n_organization_educate_customers","company-creation/templates/components/shared/header"],null]],[13],[2,"\\n  "],[13],[2,"\\n  "],[10,"div"],[14,0,"org-company-creation__header-section"],[12],[2,"\\n    "],[10,"figure"],[14,0,"org-company-creation__illustration org-company-creation__briefcase"],[12],[13],[2,"\\n    "],[10,"p"],[14,0,"t-16 t-white t-bold mt3"],[12],[1,[30,[36,0],["i18n_organization_promote_career","company-creation/templates/components/shared/header"],null]],[13],[2,"\\n    "],[10,"p"],[14,0,"t-14 t-white t-normal"],[12],[1,[30,[36,0],["i18n_organization_attract_top_talent","company-creation/templates/components/shared/header"],null]],[13],[2,"\\n  "],[13],[2,"\\n  "],[10,"div"],[14,0,"org-company-creation__header-section"],[12],[2,"\\n    "],[10,"figure"],[14,0,"org-company-creation__illustration org-company-creation__people-group"],[12],[13],[2,"\\n    "],[10,"p"],[14,0,"t-16 t-white t-bold mt3"],[12],[1,[30,[36,0],["i18n_organization_build_relationships","company-creation/templates/components/shared/header"],null]],[13],[2,"\\n    "],[10,"p"],[14,0,"t-14 t-white t-normal"],[12],[1,[30,[36,0],["i18n_organization_generate_leads","company-creation/templates/components/shared/header"],null]],[13],[2,"\\n  "],[13],[2,"\\n"],[13],[2,"\\n"]],"hasEval":false,"upvars":["t"]}',meta:{moduleName:"company-creation/templates/components/shared/header.hbs"}})
+e.default=t}))
+define("company-creation/templates/create",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"EFbjaejn",block:'{"symbols":["widget"],"statements":[[2,"\\n"],[8,"company-creation@page-create-base",[],[["@getCreateFormData","@submitPageCreateForm","@createPortalData","@type","@resetType"],[[30,[36,1],["getCreateFormData"],null],[30,[36,1],["submitPageCreateForm"],null],[32,0,["model","createPortalData"]],[32,0,["type"]],[32,0,["resetType"]]]],[["default"],[{"statements":[[2,"\\n"],[6,[37,0],[[32,1,["createFormData"]]],null,[["default","else"],[{"statements":[[2,"    "],[1,[32,1,["createForm"]]],[2,"\\n"]],"parameters":[]},{"statements":[[6,[37,0],[[32,1,["createPortalData"]]],null,[["default"],[{"statements":[[2,"    "],[1,[32,1,["createPortal"]]],[2,"\\n  "]],"parameters":[]}]]]],"parameters":[]}]]]],"parameters":[1]}]]],[2,"\\n"]],"hasEval":false,"upvars":["if","ember-route-action-helper@route-action"]}',meta:{moduleName:"company-creation/templates/create.hbs"}})
+e.default=t}))
+define("company-creation/templates/noemail",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"2TQ4KsZK",block:'{"symbols":[],"statements":[[2,"\\n"],[8,"company-creation@shared/header",[],[[],[]],null],[2,"\\n\\n"],[10,"section"],[14,0,"org-company-creation__content container Elevation-2dp"],[12],[2,"\\n  "],[10,"div"],[14,0,"org-company-creation__illustration org-company-creation__circle-warning mt3 mb6"],[12],[13],[2,"\\n  "],[10,"h2"],[14,0,"t-16 t-black t-normal"],[12],[2,"\\n    "],[1,[30,[36,0],["i18n_organization_unconfirmed_email","company-creation/templates/noemail"],null]],[2,"\\n  "],[13],[2,"\\n  "],[10,"p"],[14,0,"t-12 t-black t-normal mt5"],[12],[2,"\\n    "],[1,[30,[36,0],["i18n_organization_unconfirmed_email_instructions","company-creation/templates/noemail"],null]],[2,"\\n  "],[13],[2,"\\n\\n  "],[8,"ember-cli-pemberly-tracking@shared/external-link",[],[["@href","@class"],["/psettings/email/","artdeco-button artdeco-button--3 mt6 mb4"]],[["default"],[{"statements":[[2,"\\n    "],[1,[30,[36,0],["i18n_organization_linkedin_settings_link","company-creation/templates/noemail"],null]],[2,"\\n  "]],"parameters":[]}]]],[2,"\\n"],[13],[2,"\\n"]],"hasEval":false,"upvars":["t"]}',meta:{moduleName:"company-creation/templates/noemail.hbs"}})
+e.default=t}))
+define("company-creation/utils/clean-company-uri",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=function(e){return e.toLowerCase().replace(t,"-").replace(/-+/g,"-").replace(/^-/g,"").replace(/-$/g,"")}
+e.URI_INVALID_CHAR_REGEX=void 0
+const t=/[^-a-z0-9\u007F-\uFFFF]+/g
+e.URI_INVALID_CHAR_REGEX=t}))
+define("company-creation/utils/data-providers",["exports","global-utils/utils/create-cache-key-from-query","data-layer/utils/organization/resource-to-url-map"],(function(e,t,r){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.fetchConfirmedEmailsForCurrentUser=function(e){const r="onboarding/memberHandles",a={q:"criteria",type:"EMAIL",state:"CONFIRMED",primary:!1}
+return e.queryURL(r,{cacheKey:(0,t.default)(r,a),params:a})}
+e.fetchCreatePortal=function(e){return e.queryURL("organization/entryPageCreationForm")}
+e.fetchCreateForm=function(e,t){return e.findRecord("com.linkedin.voyager.organization.creation.PageCreationForm",t,{adapterOptions:{url:(0,r.buildRecordUrl)(r.urlsMap.OrganizationPageCreationFormsResource,t)}})}}))
+define.alias("client-sensor-web/utils/helpers","company-creation/utils/helpers")
+define("company-creation/utils/requests/page-creation-form-response",["exports","extended/config/environment","data-layer/utils/organization/restli-action-request-builder","global-utils/utils/url"],(function(e,t,r,a){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.validatePageCreationFormResponseRequest=function(e){return(0,r.default)(n,"pageValidationResult",e)}
+e.submitPageCreationFormResponseRequest=function(e,t,r){return[t&&r?(0,a.addQueryParams)(n,{validationToken:t,tokenSource:r}):n,"POST",{data:e}]}
+e.getCompanyImageRequest=function(e){return(0,r.default)(o,"getCompanyImage",{assetUrn:e})}
+const n=`/${t.default.namespace}/organization/pageCreationFormResponse`,o=`/${t.default.namespace}/organization/companies`}))
+define.alias("@linkedin/artdeco-datepicker/utils/should-use-timezone","company-creation/utils/should-use-timezone")
+define.alias("ember-vector-images/utils/vector-url","company-creation/utils/vector-url")
+
+//# sourceMappingURL=engine.map
