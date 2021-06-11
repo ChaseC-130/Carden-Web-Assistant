@@ -1,12 +1,8 @@
 import flask 
 from Commands import *
-from flask import request, jsonify
-from flask_cors import CORS, cross_origin
+from flask import request, jsonify, Flask
 
-app = flask.Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
-CORS(app, resources={r"/*": {"origins": "*"}})
-
+app = Flask(__name__)
 
 # Route that returns youtube music video link 
 @app.route('/api/v1/music', methods=['GET'])
@@ -24,4 +20,4 @@ def receive():
     return process_text(request)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, ssl_context='adhoc')
+    app.run()
